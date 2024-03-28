@@ -42,7 +42,11 @@ selects.forEach((tag) => {
 
 textareaFrom.addEventListener("keypress", (event) => {
     if (event.code === "Enter") {
-        loadTranslation();
+        if (textareaFrom.value.toLowerCase() === "alice") {
+            toggleDarkMode(true); 
+        } else {
+            loadTranslation();
+        }
     }
 });
 

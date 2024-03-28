@@ -4,31 +4,37 @@
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
+
 .divSelects {
-    position: relative; 
-    margin-top: 20px; 
-    text-align: center; 
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
 }
+
 .listra {
     background-color: #5B0B9B;
-    height: 100%;
-    width: 70px;
+    height: 200%;
+    width: 90px;
     position: absolute;
 }
+
 body {
     height: 100vh;
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
     background-color: white;
 }
+
 .dark-mode {
     background-color: black;
 }
+
 header {
     padding: 8px;
     align-items: center;
     padding: 56px;
 }
+
 button {
     position: absolute;
     display: flex;
@@ -39,45 +45,60 @@ button {
     border: none;
     background-color: transparent;
 }
+
 main {
     height: 100vh;
     display: grid;
     justify-content: center;
 }
+
 .text1 {
     padding-top: 64px;
     height: 56px;
 }
+
 .text2 {
     height: 56px;
-    padding-bottom: 64px;  
+    padding-bottom: 64px;
 }
+
 .text1 input {
     background-color: transparent;
     background-image: url(./img/brasil.png);
     background-repeat: no-repeat;
     background-position: right;
-    background-size: contain;
     padding: 16px;
     width: 867px;
     outline: none;
     border-top-style: none;
     border-left-style: none;
-    border-right-style: none;  
+    border-right-style: none;
 }
+
 .text2 input {
     background-color: transparent;
     background-image: url(./img/eua.png);
     background-repeat: no-repeat;
     background-position: right;
-    background-size: contain;
     padding: 16px;
     width: 867px;
     outline: none;
     border-top-style: none;
     border-left-style: none;
-    border-right-style: none;  
+    border-right-style: none;
 }
+
+.divSelects {
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.divSelects select {
+    width: 30%;
+    height: 40px;
+}
+
 h1 {
     display: flex;
     justify-content: center;
@@ -85,18 +106,10 @@ h1 {
     font-size: 64px;
     padding: 24px;
 }
+
 footer {
     display: flex;
-    color: black;
+    color: purple;
     justify-content: center;
     padding: 36px;
 }
-
-
-.divSelects {
-    position: relative; 
-    margin-top: 20px; 
-    text-align: center; 
-}
-
-
