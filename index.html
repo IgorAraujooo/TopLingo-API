@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="./script.js"></script>
+    <title>TopLingo</title>
+</head>
+<body>  
+    <div class="listra"></div>
+    <button class="lua">
+        <div class="modo-botao">
+            <button onclick="toggleDarkMode(true)" id="button-modo-escuro"><img src="./img/lua 1.png" alt="imagem da lua"></button>
+            <button onclick="toggleDarkMode(false)" id="button-modo-claro" style="display: none;"><img src="./img/sol.png" alt="imagem do sol"></button>
+        </div>  
+    </button>
+    <header>
+        <div class="conteudo">
+            <h1>TopLingo </h1>
+        </div>
+    </header>
+    <main>
+      
+        <div class="divSelects">
+            <select class="selectFrom"></select>
+            <select class="selectTo"></select>
+        </div>
+            
+        <div class="text1">
+            <input id="textareaFrom" rows="8" placeholder="Digitar texto"></input>
+        </div>
+        <div class="text2">
+            <input id="textareaTo" rows="8" placeholder="Tradução" disabled></input>
+        </div>
+    </main>
+    <footer>
+       <p> 🚀 Igor Araujo & Yasmin Targino 🚀</p>
+    </footer>
+</body>
+</html>
