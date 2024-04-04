@@ -1,6 +1,7 @@
 const textareaFrom = document.querySelector("#textareaFrom");
 const textareaTo = document.querySelector("#textareaTo");
 const selects = document.querySelectorAll("select");
+const microphoneButton = document.getElementById("microphoneButton");
 
 const countries = {
     "en-GB": "Inglês",
@@ -25,18 +26,17 @@ function toggleDarkMode(isDarkMode) {
     }
 }
 
-selects.forEach((tag) => {
+selects.forEach((select) => {
     for (let country in countries) {
-        let selected;
-        if (tag.className.includes("selectFrom") && country == "pt-BR") {
+        let selected = "";
+        if (select.classList.contains("selectFrom") && country === "pt-BR") {
             selected = "selected";
-        } else if (tag.className.includes("selectTo") && country == "en-GB") {
+        } else if (select.classList.contains("selectTo") && country === "en-GB") {
             selected = "selected";
         }
 
         const option = `<option value="${country}" ${selected}>${countries[country]}</option>`;
-
-        tag.insertAdjacentHTML("beforeend", option);
+        select.insertAdjacentHTML("beforeend", option);
     }
 });
 
@@ -50,12 +50,30 @@ textareaFrom.addEventListener("keypress", (event) => {
     }
 });
 
+microphoneButton.addEventListener('click', function() {
+    var speech = true;
+    window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
+    const recognition = new SpeechRecognition();
+    recognition.interimResults = true;
+
+    recognition.addEventListener('result', e => {
+        const transcript = Array.from(e.results)
+            .map(result => result[0])
+            .map(result => result.transcript)
+            .join('');
+
+        textareaFrom.value = transcript;
+    });
+
+    recognition.start();
+});
+
 function loadTranslation() {
     fetch(
-            `https://api.mymemory.translated.net/get?q=${textareaFrom.value}&langpair=${selects[0].value}|${selects[1].value}`
-        )
-        .then((res) => res.json())
-        .then((data) => {
-            textareaTo.value = data.responseData.translatedText;
-        });
+        `https://api.mymemory.translated.net/get?q=${textareaFrom.value}&langpair=${selects[0].value}|${selects[1].value}`
+    )
+    .then((res) => res.json())
+    .then((data) => {
+        textareaTo.value = data.responseData.translatedText;
+    });
 }

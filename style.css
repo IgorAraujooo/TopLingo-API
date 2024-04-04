@@ -113,3 +113,22 @@ footer {
     justify-content: center;
     padding: 36px;
 }
+
+.text1 {
+    padding-top: 64px;
+    height: 56px;
+    position: relative; 
+}
+
+#microphoneButton {
+    position: fixed; 
+    bottom: 340px; 
+    right: 30px; 
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#microphoneButton img {
+    width: 40px;
+}
